@@ -1,0 +1,27 @@
+---
+title: "Webpage of Philadelphia with Temple University"
+author: "Jun Nelson"
+date: "10/26/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Temple University located in city of Philadelphia
+
+
+
+```{r, echo=FALSE}
+library(leaflet)
+df<-data.frame(lat=runif(500, min=39.95, max=39.105),
+               lng=runif(500, min=-75.10, max=-75.20))
+
+df %>%
+leaflet()%>%
+  addTiles() %>%
+ addMarkers(lat=39.9800, lng=-75.1600, popup="Temple University")
+```
+
+
